@@ -6,6 +6,4 @@ from wtforms.fields.html5 import EmailField, DecimalRangeField, DateTimeLocalFie
 from wtforms import validators
 
 class OdooProductForm(FlaskForm):
-    shopify_domain = StringField('Shopify Store Domain', validators=[DataRequired()])
-    shopify_password = StringField('Shopify Store Password', validators[])
     product_id = StringField('Pull and Push Product', validators=[DataRequired()])
