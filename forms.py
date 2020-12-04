@@ -6,4 +6,4 @@ from wtforms.fields.html5 import EmailField, DecimalRangeField, DateTimeLocalFie
 from wtforms import validators
 
 class OdooProductForm(FlaskForm):
-    product_id = StringField('Pull and Push Product', validators=[DataRequired()])
+    product_id = StringField('Product id', validators=[DataRequired()])

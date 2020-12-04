@@ -5,6 +5,7 @@ import requests
 import shopify
 import forms
 app = Flask(__name__)
+
 app.config['SECRET_KEY'] = "Secret key here"
 app.config['SHOPIFY_API_KEY'] = "f4d3179bd388e45e631e0f147a2c6027"
 app.config['SHOPIFY_PASSWORD'] = "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"
@@ -25,10 +26,10 @@ def home():
     print(str(ids))
     form = forms.OdooProductForm()
     if form.validate_on_submit():
-        return redirect('/get-and-push-product-into-odoo/' + form.product_id.data)
+        return redirect('/get-and-push-product-into-shopify/' + form.product_id.data)
     return render_template('home.html', odoo_product_ids=ids, form=form)
 
-@app.route('/get-and-push-product-into-odoo/<product_id>')
+@app.route('/get-and-push-product-into-shopify/<product_id>')
 def get_odoo_and_push(product_id):
     #get proxy server
     info = xmlrpc.client.ServerProxy('https://demo.odoo.com/start').start()
