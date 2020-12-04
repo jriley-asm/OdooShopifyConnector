@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Connector</title>
+</head>
+<body>
+<div>Available Odoo Product Ids: {{ odoo_product_ids }}</div>
+<br>
+<br>
+<form method="post" class="form no-list-styling" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    {{ form.product_id(class_ = '', placeholder = form.product_id.label.text) }}
+    <input type="submit" value="Begin" class="btn btn--primary">
+</form>
+</body>
+</html>
